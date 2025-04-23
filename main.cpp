@@ -1,11 +1,3 @@
-
-//=================================================================================
-// Name         : DS Assignment#2 
-// Author       : Harsh Sahu
-// Version      : 1.0
-// Date Created : 05-Nov-2022
-// Date Modified: 05-april-2023
-// Description  : Starter Code for Contact Management System using BST Tree in C++
 #include<sstream>
 //=================================================================================
 #include<iostream>
@@ -177,8 +169,8 @@ int main(void)
 		}
 		else if (command == "exit"){
 			cout << "Exiting the program..." << endl;
-			exit(0);
-			//return(0);
+			// exit(0);
+			return(0);
 		}
 		else
 			cout << "Invalid command. Please try again." << endl;
