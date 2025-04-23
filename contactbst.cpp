@@ -102,7 +102,10 @@ void ContactBST::remove(Node* ptr, string key)
         else { // if temp does not have a parent, it is the root node
             root = nullptr; // set the root to NULL
         }
-        delete temp; // delete the node
+        for(int i = 0; i < temp->contactVector.size(); i++) {
+         delete temp->contactVector.at(i); // Delete each Contact object
+         }
+         delete temp; // delete the node
     }
     else if (temp->left == nullptr){ // if the node has only a right child
         if (temp->parent != nullptr) { // check if temp has a parent
@@ -119,6 +122,9 @@ void ContactBST::remove(Node* ptr, string key)
             root = temp->right; // set the root to the node's right child
             temp->right->parent = nullptr; // set the right child's parent to NULL
         }
+        for(int i = 0; i < temp->contactVector.size(); i++) {
+            delete temp->contactVector.at(i); // Delete each Contact object
+        }
         delete temp; // delete the node
     }
     else if (temp->right == nullptr){ // if the node has only a left child
@@ -132,6 +138,14 @@ void ContactBST::remove(Node* ptr, string key)
                 temp->left->parent = temp->parent; // set the left child's parent to the node's parent
             }
         }
+        else {
+            root = temp->left; // set the root to the node's left child
+            temp->left->parent = nullptr; // set the left child's parent to NULL
+        }
+        for (int i = 0; i < temp->contactVector.size(); i++) {
+            delete temp->contactVector.at(i); // Delete each Contact object
+        }
+         delete temp; // delete the node
     }
 
     else if (temp->right!=nullptr && temp->left!=nullptr){
@@ -139,6 +153,7 @@ void ContactBST::remove(Node* ptr, string key)
          temp->key = min->key;
          while(temp->contactVector.size()>0)
          {
+             delete temp->contactVector.at(0); // Delete each Contact object
              temp->contactVector.erase(0);
          }
          for(int i=0; i<min->contactVector.size(); i++)
@@ -159,22 +174,30 @@ void ContactBST::update(string key)
     if (temp != NULL){ // if the key is found
         temp->print(); // print the node
         
-        cout << "Enter the number of the record you want to edit: ";
+        
         int num;
+        cout << "Enter the number of the record you want to edit: ";
         cin >> num;
+        cin.ignore(); // ignore the newline character left in the input buffer
         if (num > 0 && num <= temp->contactVector.size()){ // if the number is valid
             Contact* ct = temp->contactVector.at(num-1); // get the contact at the index
             cout << "Which Field do you want to edit?" << endl;
             cout << "1. First Name 2. Last Name 3.Email 4. Phone 5. City 6. Country : ";
             // int choice;
             // cin >> choice;
-            string choice;
-            getline(cin, choice);
-            int choiceNum = stoi(choice);
+            int choiceNum;
+            cin >> choiceNum;
+            cin.ignore(); // ignore the newline character left in the input buffer
+            string newValue;
+            // string choice;
+            // getline(cin, choice);
+            // int choiceNum = stoi(choice);
             switch(choiceNum){
                 case 1:
                     cout << "Enter the new first name: ";
-                    cin >> ct->fname; // update the first name
+                    getline(cin, newValue); // get the new first name
+                    ct->fname = newValue; // update the first name
+                    //cin >> ct->fname; // update the first name
                     break;
                 case 2:
                     cout << "Enter the new last name: ";
@@ -182,19 +205,23 @@ void ContactBST::update(string key)
                     break;
                 case 3:
                     cout << "Enter the new email: ";
-                    cin >> ct->email; // update the email
+                    getline(cin, newValue); 
+                    ct->lname = newValue;
                     break;
                 case 4:
                     cout << "Enter the new phone number: ";
-                    cin >> ct->phone; // update the phone number
+                    getline(cin, newValue); 
+                    ct->phone = newValue;
                     break;
                 case 5:
                     cout << "Enter the new city: ";
-                    cin >> ct->city; // update the city
+                    getline(cin, newValue); 
+                    ct->city = newValue;
                     break;
                 case 6:
                     cout << "Enter the new country: ";
-                    cin >> ct->country; // update the country
+                    getline(cin, newValue); 
+                    ct->country = newValue;
                     break;
                 default:
                     cout << "Invalid choice!" << endl;
