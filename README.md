@@ -61,6 +61,7 @@ Data Structures
 - Careful pointer handling throughout the application
 
 ### Project Structure
+```
 contact-management-system/
 ├── Makefile                # Build configuration
 ├── contact.h               # Contact class declaration
@@ -71,7 +72,7 @@ contact-management-system/
 ├── myvector.cpp            # MyVector template class implementation
 ├── main.cpp                # Program entry point and UI
 └── README.md               # Project documentation
-
+```
 ### Class Documentation
 __Contact Class__
 __Purpose:__ Stores individual contact information
