@@ -77,88 +77,88 @@ __Contact Class__
 __Purpose:__ Stores individual contact information
 **Members:**
 
-<span style="color:red">string fname</span> - First name
-<span style="color:red">string lname</span> - Last name
-<span style="color:red">string email</span> - Email address
-<span style="color:red">string phone</span> - Phone number
-<span style="color:red">string city</span> - City
-<span style="color:red">string country</span> - Country
-<span style="color:red">bool isFav</span> - Favorite status
+* <span style="color:red">string fname</span> - First name
+* <span style="color:red">string lname</span> - Last name
+* <span style="color:red">string email</span> - Email address
+* <span style="color:red">string phone</span> - Phone number
+* <span style="color:red">string city</span> - City
+* <span style="color:red">string country</span> - Country
+* <span style="color:red">bool isFav</span> - Favorite status
 
 **Methods:**
 
-<span style="color:red">Contact(string fname, string lname, string email, string phone, string city, string country, bool isFav)</span> - Constructor
+* <span style="color:red">Contact(string fname, string lname, string email, string phone, string city, string country, bool isFav)</span> - Constructor
 
 **Node Class**
 **Purpose:** Represents a node in the Binary Search Tree
 **Members:**
 
-<span style="color:red">string key</span> - Search key (first name + last name)
-<span style="color:red">MyVector<Contact*> contactVector</span> - Vector of contacts with the same key
-<span style="color:red">Node* left</span> - Pointer to left child
-<span style="color:red">Node* right</span> - Pointer to right child
-<span style="color:red">Node* parent</span> - Pointer to parent node
+* <span style="color:red">string key</span> - Search key (first name + last name)
+* <span style="color:red">MyVector<Contact*> contactVector</span> - Vector of contacts with the same key
+* <span style="color:red">Node* left</span> - Pointer to left child
+* <span style="color:red">Node* right</span> - Pointer to right child
+* <span style="color:red">Node* parent</span> - Pointer to parent node
 
 **Methods:**
 
-<span style="color:red">Node(string key, Contact *data)</span> - Constructor
-<span style="color:red">string getKey()</span> - Returns the node's key
-<span style="color:red">MyVector<Contact*> getData()</span> - Returns the contact vector
-<span style="color:red">void print()</span> - Prints contacts with numbering
-<span style="color:red">void print2(ostream &os)</span> - Prints contacts without numbering
+* <span style="color:red">Node(string key, Contact *data)</span> - Constructor
+* <span style="color:red">string getKey()</span> - Returns the node's key
+* <span style="color:red">MyVector<Contact*> getData()</span> - Returns the contact vector
+* <span style="color:red">void print()</span> - Prints contacts with numbering
+* <span style="color:red">void print2(ostream &os)</span> - Prints contacts without numbering
 
 **MyVector Class**
 **Purpose:** Custom implementation of a dynamic array
 **Template Parameters:**
 
-<span style="color:red">typename T</span> - Type of elements stored in the vector
+* <span style="color:red">typename T</span> - Type of elements stored in the vector
 
 **Members:**
 
-<span style="color:red">T *data</span> - Pointer to array storing elements
-<span style="color:red">int v_size</span> - Current number of elements
-<span style="color:red">int v_capacity</span> - Total capacity of the vector
+* <span style="color:red">T *data</span> - Pointer to array storing elements
+* <span style="color:red">int v_size</span> - Current number of elements
+* <span style="color:red">int v_capacity</span> - Total capacity of the vector
 
 **Methods:**
 
-<span style="color:red">MyVector(int cap=0)</span> - Constructor with optional capacity
-<span style="color:red">~MyVector()</span> - Destructor
-<span style="color:red">void push_back(T element)</span> - Add element to end
-<span style="color:red">void insert(int index, T element)</span> - Insert element at position
-<span style="color:red">void erase(int index)</span> - Remove element at position
-<span style="color:red">T& at(int index)</span> - Access element with bounds checking
-<span style="color:red">const T& front()</span> - Access first element
-<span style="color:red">const T& back()</span> - Access last element
-<span style="color:red">int size() const</span> - Get number of elements
-<span style="color:red">int capacity() const</span> - Get vector capacity
-<span style="color:red">bool empty() const</span> - Check if vector is empty
-<span style="color:red">void shrink_to_fit()</span> - Reduce capacity to match size
-<span style="color:red">void display()</span> - Print all elements
+* <span style="color:red">MyVector(int cap=0)</span> - Constructor with optional capacity
+* <span style="color:red">~MyVector()</span> - Destructor
+* <span style="color:red">void push_back(T element)</span> - Add element to end
+* <span style="color:red">void insert(int index, T element)</span> - Insert element at position
+* <span style="color:red">void erase(int index)</span> - Remove element at position
+* <span style="color:red">T& at(int index)</span> - Access element with bounds checking
+* <span style="color:red">const T& front()</span> - Access first element
+* <span style="color:red">const T& back()</span> - Access last element
+* <span style="color:red">int size() const</span> - Get number of elements
+* <span style="color:red">int capacity() const</span> - Get vector capacity
+* <span style="color:red">bool empty() const</span> - Check if vector is empty
+* <span style="color:red">void shrink_to_fit()</span> - Reduce capacity to match size
+* <span style="color:red">void display()</span> - Print all elements
 
 **ContactBST Class**
 **Purpose:** Binary Search Tree for managing contacts
 **Members:**
 
-<span style="color:red">Node* root</span> - Pointer to the root node of the BST
+* <span style="color:red">Node* root</span> - Pointer to the root node of the BST
 
 **Methods:**
 
-<span style="color:red">ContactBST()</span> - Constructor
-<span style="color:red">~ContactBST()</span> - Destructor
-<span style="color:red">Node* getRoot()</span> - Returns root node
-<span style="color:red">void add(Node* ptr, string key, Contact *data)</span> - Add a contact
-<span style="color:red">void update(string key)</span> - Update a contact
-<span style="color:red">void remove(Node* ptr, string key)</span> - Remove a contact
-<span style="color:red">void printnode(Node* ptr)</span> - Print node data
-<span style="color:red">Node* searchFor(Node* ptr, string key)</span> - Find a node by key
-<span style="color:red">bool markFav(string key)</span> - Mark contact as favorite
-<span style="color:red">bool unmarkFav(string key)</span> - Unmark contact as favorite
-<span style="color:red">void printASC(Node* ptr)</span> - Print contacts in ascending order
-<span style="color:red">void printDES(Node* ptr)</span> - Print contacts in descending order
-<span style="color:red">void printFav(Node* ptr)</span> - Print favorite contacts
-<span style="color:red">int importCSV(string path)</span> - Import contacts from CSV
-<span style="color:red">int exportCSV(Node* ptr, ostream& file)</span> - Export contacts to CSV
-<span style="color:red">Node* findMin(Node* ptr)</span> - Find minimum node (helper method)
+* <span style="color:red">ContactBST()</span> - Constructor
+* <span style="color:red">~ContactBST()</span> - Destructor
+* <span style="color:red">Node* getRoot()</span> - Returns root node
+* <span style="color:red">void add(Node* ptr, string key, Contact *data)</span> - Add a contact
+* <span style="color:red">void update(string key)</span> - Update a contact
+* <span style="color:red">void remove(Node* ptr, string key)</span> - Remove a contact
+* <span style="color:red">void printnode(Node* ptr)</span> - Print node data
+* <span style="color:red">Node* searchFor(Node* ptr, string key)</span> - Find a node by key
+* <span style="color:red">bool markFav(string key)</span> - Mark contact as favorite
+* <span style="color:red">bool unmarkFav(string key)</span> - Unmark contact as favorite
+* <span style="color:red">void printASC(Node* ptr)</span> - Print contacts in ascending order
+* <span style="color:red">void printDES(Node* ptr)</span> - Print contacts in descending order
+* <span style="color:red">void printFav(Node* ptr)</span> - Print favorite contacts
+* <span style="color:red">int importCSV(string path)</span> - Import contacts from CSV
+* <span style="color:red">int exportCSV(Node* ptr, ostream& file)</span> - Export contacts to CSV
+* <span style="color:red">Node* findMin(Node* ptr)</span> - Find minimum node (helper method)
 
 ### Requirements
 
@@ -166,8 +166,6 @@ __Purpose:__ Stores individual contact information
 * Make (for building with the provided Makefile)
 
 ### How to Build and Run
-
-Using Make
 
 ```
 # Clone the repository
